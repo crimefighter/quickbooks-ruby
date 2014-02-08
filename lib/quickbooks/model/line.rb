@@ -11,6 +11,8 @@ module Quickbooks
       xml_accessor :description, :from => 'Description'
       xml_accessor :amount, :from => 'Amount', :as => BigDecimal, :to_xml => Proc.new { |val| val.to_f }
       xml_accessor :detail_type, :from => 'DetailType'
+      xml_accessor :linked_txn_id, :from => 'LinkedTxn.TxnId'
+      xml_accessor :linked_txn_type, :from => 'LinkedTxn.TxnType'
 
       #== Various detail types
       xml_accessor :sales_item_line_detail, :from => 'SalesItemLineDetail', :as => SalesItemLineDetail
